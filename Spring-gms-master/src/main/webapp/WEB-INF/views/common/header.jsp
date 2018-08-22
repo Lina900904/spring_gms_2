@@ -12,8 +12,8 @@
       <div class="container">
         <div class="row">
           <div class="intro-text">
-            <h1><strong>이스리네</strong> <span>/</span> Interior Design Studio</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+            <h1><strong>이스리네</strong> <span>~~~~</span> </h1>
+            <p></p>
             <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a> </div>
         </div>
       </div>

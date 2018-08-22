@@ -32,7 +32,7 @@ public class HomeController {
 		session.setAttribute("context", context);
 		//model.addAttribute("serverTime", "" );
 		
-		return "main";
+		return "public:common/content.tiles";
 	}
 	
 }

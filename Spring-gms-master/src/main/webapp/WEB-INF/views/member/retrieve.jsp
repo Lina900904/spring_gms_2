@@ -49,7 +49,7 @@
 		</table>
 
 	 <a id="updateBtn">	<input type="button"  value="정보수정" /></a>
-
+ 	<a id="logoutBtn">	<input type="button"  value="로그아웃" /></a>
 		<a id="deleteBtn">	<input type="button"  value="회원탈퇴" /></a>
 
 	</form>

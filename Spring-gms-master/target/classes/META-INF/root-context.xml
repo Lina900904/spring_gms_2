@@ -23,7 +23,7 @@
 		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="viewResolvers">
 			<list>
-				<bean
+				<bean 
 					class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 					<property name="viewClass"
 						value="org.springframework.web.servlet.view.tiles3.TilesView"/>

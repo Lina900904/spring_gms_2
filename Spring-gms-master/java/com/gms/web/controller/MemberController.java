@@ -1,5 +1,4 @@
 package com.gms.web.controller;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,12 +20,18 @@ public class MemberController {
 	@RequestMapping("/remove")
 	public void remove() {}
 	@RequestMapping("/login")
-	public void login() {}
-	@RequestMapping("/move")
-	public void move() {}
+	public String login() {
+		return "login__success";
+	}
+
 	@RequestMapping("/logout")
-	public void logout() {}
+	public String logout() {
+		return "redirect:/";
+	}
 	@RequestMapping("/fileupload")
 	public void fileupload() {}
+	
+	
+	
 	
 }

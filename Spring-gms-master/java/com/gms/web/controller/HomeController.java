@@ -22,7 +22,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpSession session, HttpServletRequest request) {
 		String context = request.getContextPath();
-		logger.info("Welcome home! The client locale is {}.", context); //=sysout
+		logger.info("Welcome home! The client locale is {}.", context);
 		session.setAttribute("context", context);
 
 		return "public:common/content.tiles";

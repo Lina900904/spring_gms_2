@@ -19,11 +19,12 @@ app = {
 		$('#joinBut').click(() => {
 			location.href = app.x()+'/move/auth/member/add';
 		}), 
-		$('#loginFormBtn').click(() => {
-			location.href = app.x()+'/move/retrieve/member/retrieve';
-		});
+		
 		$('#joinFormBtn').click(() => {
 			location.href = app.x()+'/move/auth/member/login';
+		});
+		$('#loginFormBtn').click(() => {
+			location.href = app.x()+'/member/login';
 		});
 		$('logoutBtn').click(() => {
 			location.href = app.x();

@@ -16,7 +16,7 @@
 	<definition name="auth:*/*.tiles" extends="public">
 		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
-		<definition name="retrieve:*/*.tiles" extends="public"> 
+		<definition name="login__success" extends="public"> 
 		<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
 		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
 		<put-attribute name="content" value=""/>

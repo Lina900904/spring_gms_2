@@ -23,10 +23,10 @@
 		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="viewResolvers">
 			<list>
-				<bean 
+				<bean
 					class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 					<property name="viewClass"
-						value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+						value="org.springframework.web.servlet.view.tiles3.TilesView" />
 				</bean>
 				<bean
 					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -50,4 +50,14 @@
 
 	<context:component-scan
 		base-package="com.gms.web" />
+<!-- 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" 
+		value="driver"></property>
+	</bean> -->
+	<bean id ="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver"/>
+		<property name="url" value="jdbc:mariadb://localhost:3306/mariadb"/>
+		<property name="username" value="mariadb"/>
+		<property name="password" value="mariadb"/>
+	</bean>
 </beans>

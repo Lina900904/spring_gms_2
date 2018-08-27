@@ -44,7 +44,6 @@
 			<list>
 				<value>/WEB-INF/tiles.xml</value>
 			</list>
-
 		</property>
 	</bean>
 

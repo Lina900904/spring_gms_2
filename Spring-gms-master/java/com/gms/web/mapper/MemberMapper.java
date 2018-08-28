@@ -10,14 +10,19 @@ import org.springframework.stereotype.Repository;
 
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.repository.MemberDAO;
+import com.gms.web.service.MemberService;
+import com.gms.web.service.impl.MemberServiceImpl;
+
+import jdk.nashorn.internal.ir.RuntimeNode.Request;
 @Repository
 public class MemberMapper implements MemberDAO {
     @Autowired SqlSessionFactory factory;//connect까지 리턴함
     private static final String ns = "com.gms.web.mapper.MemberMapper";
     @Override
-    public void insert(MemberDTO p) {
-        // TODO Auto-generated method stub
-        
+    public void insert(MemberDTO m) {
+    	System.out.println("DAO진입");
+    	SqlSession sqlSession = factory.openSession();
+    	sqlSession.insert(ns+".add",m);
     }
 
     @Override
@@ -35,7 +40,7 @@ public class MemberMapper implements MemberDAO {
     @Override
     public MemberDTO selectOne(Map<?, ?> p) {
         SqlSession sqlSession = factory.openSession();
-        return (MemberDTO) sqlSession.selectOne(ns+".selectOne",p);
+        return sqlSession.selectOne(ns+".selectOne",p);
     }
 
     @Override
@@ -57,9 +62,12 @@ public class MemberMapper implements MemberDAO {
     }
 
     @Override
-    public boolean login(Map<?, ?> p) {
-        // TODO Auto-generated method stub
-        return false;
+    public boolean login(MemberDTO m) {
+    	SqlSession sqlSession = factory.openSession();
+    	System.out.println("m값"+m);
+    
+        return (sqlSession.selectOne(ns+".login",m)!=null);
     }
+ 
 
 }

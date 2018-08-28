@@ -14,25 +14,41 @@ app = {
 		console.log('step3');
 		app.setContentView(); //뷰를 만든다음
 		$('#loginBut').click(() => {
-			location.href = app.x()+'/move/auth/member/login';
+			location.href = app.x() + '/move/auth/member/login';
 		}),
 		$('#joinBut').click(() => {
-			location.href = app.x()+'/move/auth/member/add';
-		}), 
-		
+			location.href = app.x() + '/move/auth/member/add';
+		}),
+
 		$('#joinFormBtn').click(() => {
-			location.href = app.x()+'/move/auth/member/login';
+			alert('joinFormBtn click');
+			/*var form = document.getElementById('join-Form');
+			form.action = app.x() + "/member/add"
+			form.method = "POST"*/
+			$('#join-Form')
+			.attr({
+				action : app.x()+"/member/add",
+				method : "POST"
+				
+			})
+			.submit();
 		});
 		$('#loginFormBtn').click(() => {
-			location.href = app.x()+'/member/login';
+			alert("loginFormBtn click")
+			$('#login').attr({
+				action : app.x()+"/member/login",
+				method: "POST"
+			})
+			.submit();
+			
 		});
 		$('logoutBtn').click(() => {
 			location.href = app.x();
 		});
-		
-		
-		
-	
+
+
+
+
 	},
 	setContentView : () => {
 		console.log('step4' + app.session.path('js')); //step4/web/resources/js
@@ -40,16 +56,16 @@ app = {
 	}
 };
 
-app.x= ()=>{
+app.x = () => {
 	return app.session.path('context');
 };
-app.j= ()=>{
+app.j = () => {
 	return app.session.path('js');
 };
-app.c= ()=>{
+app.c = () => {
 	return app.session.path('css');
 };
-app.i= ()=>{
+app.i = () => {
 	return app.session.path('img');
 };
 

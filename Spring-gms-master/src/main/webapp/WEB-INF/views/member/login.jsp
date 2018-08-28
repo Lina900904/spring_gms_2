@@ -10,7 +10,7 @@
 
 		<form id="login" name = "login">
 			ID : <br>
-			<input type="text" name="userid" /><br /> 
+			<input type="text" name="id" /><br /> 
 			PassWord: <br />
 			<input type="text" name="password" /><br /> <br /> 
 			<input id="loginFormBtn" type="button" value="전송" /> 

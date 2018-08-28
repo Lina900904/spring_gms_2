@@ -7,10 +7,10 @@
 <h1> 회원가입</h1>
 
 <form id="join-Form" name ="join-Form">
-ID <input type="text" name = "userid"/><br />
-NAME <input type="text" name = "name" /><br />
-PASSWORD <input type="text" name = "password" /><br />
-주민등록번호 <input type="text" name = "ssn" /><br />
+ID <input type="text" name = "id" required><br />
+NAME <input type="text" name = "name" required><br />
+PASSWORD <input type="text" name = "password" required><br />
+주민등록번호 <input type="text" name = "ssn" required><br />
 <br />
 <!-- <input type="hidden" name = "action" value = "join" />
 <input type="hidden" name = "page" value = "joinResult" /> -->
@@ -19,11 +19,11 @@ PASSWORD <input type="text" name = "password" /><br />
 
 <br />
 소속팀
-<input type="radio" name = "teamid" value="none" checked="checked"/>없음
-<input type="radio" name = "teamid" value="nolja" checked="checked"/>걍놀자
-<input type="radio" name = "teamid" value="jieunHouse" checked="checked"/>지은이네
-<input type="radio" name = "teamid" value="turtleKing" checked="checked"/>왕거북이
-<input type="radio" name = "teamid" value="coddingZzang" checked="checked"/>코딩짱
+<input type="radio" name = "teamId" value="none" checked="checked"/>없음
+<input type="radio" name = "teamId" value="nolja" checked="checked"/>걍놀자
+<input type="radio" name = "teamId" value="jieunHouse" checked="checked"/>지은이네
+<input type="radio" name = "teamId" value="turtleKing" checked="checked"/>왕거북이
+<input type="radio" name = "teamId" value="coddingZzang" checked="checked"/>코딩짱
 <br />
 프로젝트 역할
 <select name="roll" id="roll">
@@ -48,7 +48,6 @@ PASSWORD <input type="text" name = "password" /><br />
 
 </form>
 </div>
-
 
 
 

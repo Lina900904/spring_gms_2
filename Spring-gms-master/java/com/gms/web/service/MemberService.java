@@ -6,12 +6,12 @@ import java.util.Map;
 import com.gms.web.domain.MemberDTO;
 
 public interface MemberService {
-	    public void add(MemberDTO p) ;
+	    public void add(MemberDTO m) ;
 	    public List<?> list(Map<?, ?> p) ;
 	    public List<?> search(Map<?, ?> p);
 	    public MemberDTO retrieve(Map<?, ?> p);
 	    public int count(Map<?, ?> p) ;
 	    public void modify(Map<?, ?> p) ;
 	    public void remove(Map<?, ?> p) ;
-	    public boolean login(Map<?, ?> p);
+	    public boolean login(MemberDTO m);
 }

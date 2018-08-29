@@ -28,7 +28,6 @@ public class MemberServiceImpl implements MemberService {
 		 m.setAge(String.valueOf(age));
     	memberDAO.insert(m);
     	
-    	
    
 		};	
 

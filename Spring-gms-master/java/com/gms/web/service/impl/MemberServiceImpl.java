@@ -71,11 +71,11 @@ public class MemberServiceImpl implements MemberService {
     	
         return   memberDAO.login(m) ;
     }
-    
+
 	@Override
-	public MemberDTO retrieve(Map<?, ?> p) {
-		
-		return memberDAO.selectOne(p);
+	public MemberDTO retrieve(MemberDTO m) {
+		return memberDAO.selectOne(m);
 	}
+    
 
 }

@@ -37,15 +37,40 @@ app = {
 			alert("loginFormBtn click")
 			$('#login').attr({
 				action : app.x()+"/member/login",
-				method: "POST"
+				method: "POST",
+				
+			
 			})
 			.submit();
+		});
+		$('#updateBtn').click(() => {
+			location.href = app.x()+'/move/auth/member/modify';
+		});
+		$('#updateFormBtn').click(() => {
+			alert("updateFormBtn click")
+			$('#update-Form').attr({
+				action : app.x()+"/member/modify",
+				method: "POST",
+					
+			})
+			.submit();
+		});
+		$('#logoutBtn').click(() => {
+			location.href = app.x() ;
+		});
+		$('#deleteBtn').click(() => {
+			location.href = app.x() + '/move/auth/member/remove';
+		});
+		$('#deleteFormBtn').click(() => {
+			alert("deleteFormBtn click")
+			$('#deleteForm').attr({
 			
+				action : app.x()+"/member/remove",
+				method: "POST",
+					
+			})
+			.submit();
 		});
-		$('logoutBtn').click(() => {
-			location.href = app.x();
-		});
-
 
 
 

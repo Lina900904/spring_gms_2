@@ -14,7 +14,7 @@
 			</tr>
 			<tr>
 				<td>새비밀번호</td>
-				<td><input type="text" name="newpass" placeholder="password" /></td>
+				<td><input type="text" name="password" placeholder="password" /></td>
 			</tr>
 			<tr>
 				<td>나이</td>
@@ -39,13 +39,13 @@
 
 			<tr>
 				<td>팀아이디</td>
-				<td><input type="radio" name="teamid" value="none"
-					checked="checked" />없음 <input type="radio" name="teamid"
-					value="nolja" checked="checked" />걍놀자 <input type="radio"
-					name="teamid" value="jieunHouse" checked="checked" />지은이네 <input
-					type="radio" name="teamid" value="turtleKing" checked="checked" />왕거북이
-					<input type="radio" name="teamid" value="coddingZzang"
-					checked="checked" />코딩짱</td>
+				<td><input type="radio" name="teamId" value="none"
+				checked="checked" />없음 
+				<input type="radio" name="teamId" value="nolja" checked="checked" />걍놀자
+				<input type="radio"name="teamId" value="jieunHouse" checked="checked" />지은이네 
+				<input type="radio" name="teamId" value="turtleKing" checked="checked" />왕거북이
+				<input type="radio" name="teamId" value="coddingZzang"checked="checked" />코딩짱
+				</td>
 			</tr>
 
 
@@ -62,18 +62,5 @@
 		<input type="submit" value="파일업로드"> 
 	</form>
 	
-	<script>
-		var form = document.getElementById('update-Form');
 
-		var roll = document.getElementById("roll");
-		for (var i = 0; i < roll.options.length; i++) {
-			//alert('team.options[i].value+과 같다')
-			if (roll.options[i].value === '${user.roll}') {
-				//alert('team.options[i].value+과 같다')
-				roll.options[i].setAttribute("selected", "selected");
-			}
-		}
-
-		
-	</script>
 </div>

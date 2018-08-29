@@ -38,11 +38,11 @@ public class MemberMapper implements MemberDAO {
     }
 
     @Override
-    public MemberDTO selectOne(Map<?, ?> p) {
+    public MemberDTO selectOne(MemberDTO m) {
         SqlSession sqlSession = factory.openSession();
-        return sqlSession.selectOne(ns+".selectOne",p);
+        return sqlSession.selectOne(ns+".selectOne",m);
     }
-
+//
     @Override
     public int count(Map<?, ?> p) {
         // TODO Auto-generated method stub
@@ -51,14 +51,17 @@ public class MemberMapper implements MemberDAO {
 
     @Override
     public void update(Map<?, ?> p) {
-        // TODO Auto-generated method stub
+    	SqlSession sqlSession = factory.openSession();
+    	sqlSession.selectOne(ns+".update",p);
+    	System.out.println(p);
         
     }
 
     @Override
     public void delete(Map<?, ?> p) {
-        // TODO Auto-generated method stub
-        
+    	SqlSession sqlSession = factory.openSession();
+    	sqlSession.selectOne(ns+".delete",p);
+    	System.out.println(p);
     }
 
     @Override

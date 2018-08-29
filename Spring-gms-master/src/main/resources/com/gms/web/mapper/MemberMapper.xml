@@ -25,8 +25,8 @@
 	</insert>
 
 	<delete id="delete" parameterType="com.gms.web.domain.MemberDTO">
-		DELETE FROM MEMBER WHERE ID
-		LIKE #{id} AND PASSWORD LIKE #{password}
+		DELETE FROM MEMBER
+		 WHERE ID LIKE #{id} AND PASSWORD LIKE #{password}
 	</delete>
 
 	<update id="update" parameterType="com.gms.web.domain.MemberDTO">
@@ -34,7 +34,7 @@
 		SET PASSWORD LIKE #{password},
 		TEAMID LIKE #{teamId},
 		ROLL LIKE #{roll}
-		WHERE ID LIKE #{roll}
+		WHERE ID LIKE #{id}
 	</update>
 
 </mapper>

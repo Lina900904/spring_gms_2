@@ -1,6 +1,9 @@
 package com.gms.web.controller;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,33 +36,38 @@ public class MemberController {
 	@RequestMapping("/retrieve")
 	public void retrieve(@ModelAttribute MemberDTO member, Model model) {
 		System.out.println("member값"+member);
-		
+		model.addAttribute("member",memberService.retrieve(member));
 	}
 	@RequestMapping("/count")
 	public void count() {}
-	@RequestMapping("/modify")
-	public void modify() {}
-	@RequestMapping("/remove")
-	public void remove() {}
+	@RequestMapping(value="/modify", method = RequestMethod.POST)
+	public void modify(@ModelAttribute MemberDTO member, Model model) {
+		Map<String, Object> p = new HashMap<>();
+		p.put("member",member);
+		memberService.modify(p);
+		System.out.println("modify member값"+member);
+		
+	}
+	@RequestMapping(value="/remove", method = RequestMethod.POST)
+	public void remove(@ModelAttribute MemberDTO member, Model model) {
+		
+		Map<String, Object> p = new HashMap<>();
+		p.put("member",member);
+		memberService.remove(p);
+		System.out.println("remove member값"+member);
+		
+	}
 	@RequestMapping(value="/login", method = RequestMethod.POST)
 	public String login(@ModelAttribute MemberDTO member, Model model) {
-		memberService.login(member);
-		
-		
-		System.out.println("--------------");
-		System.out.println(member);
-		System.out.println("--------------");
-		
 		String login ="";
-		if(member.getPassword()!=null) {
+		if(memberService.login(member)) {
+			model.addAttribute("member",memberService.retrieve(member));
 			login =  "login__success";
 		}else {
 			 login =  "redirect:/move/auth/member/login";
 		}
 		System.out.println("login값~~"+login);
-		
 		return login;
-		//
 	}
 	@RequestMapping("/logout")
 	public String logout() {
@@ -67,6 +75,9 @@ public class MemberController {
 	}
 	@RequestMapping("/fileupload")
 	public void fileupload() {}
+
+	
+	
 	
 	
 	

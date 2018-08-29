@@ -22,7 +22,6 @@ public class MemberServiceImpl implements MemberService {
 		}else {
 			m.setGender("여자");
 		}
-    	
      	SimpleDateFormat date = new SimpleDateFormat("yyyy");
      	String year=date.format(new Date());
 		 int age = Integer.parseInt(year)- 1899- (Integer.parseInt(m.getSsn().substring(0,2)));

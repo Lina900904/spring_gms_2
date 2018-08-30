@@ -6,15 +6,15 @@ import java.util.List;
 import java.util.Map;
 
 import com.gms.web.domain.MemberDTO;
+import com.gms.web.mapper.MemberMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gms.web.repository.MemberDAO;
 import com.gms.web.service.MemberService;
 @Service
 public class MemberServiceImpl implements MemberService {
-    @Autowired MemberDAO memberDAO;
+    @Autowired MemberMapper memberDAO;
     @Override
     public void add(MemberDTO m) {
     	if(m.getSsn().substring(7,8)=="1") {
@@ -65,9 +65,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public boolean login(MemberDTO m) {
-    	System.out.println("login 값  :"+m);
-    	
-        return   memberDAO.login(m) ;
+        return   memberDAO.login(m).equals("1") ;
     }
 
 	@Override

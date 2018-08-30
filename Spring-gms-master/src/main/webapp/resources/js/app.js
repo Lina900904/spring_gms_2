@@ -4,6 +4,7 @@
 "use strict;" // 에러가 나면 바로 보여줌
 
 var app = app || {}; // 앱이 있으면 앱으로 대체해라
+var user = user ||{};
 app = {
 	init : x => {
 		console.log('step1');
@@ -71,8 +72,10 @@ app = {
 			})
 			.submit();
 		});
-
-
+		$('#mypageBut').click(() => {
+			
+			location.href = app.x() + '/member/retrieve'+user.get('id');
+		});
 
 	},
 	setContentView : () => {
@@ -94,7 +97,6 @@ app.i = () => {
 	return app.session.path('img');
 };
 
-
 app.session = {
 	context : x => {
 		console.log('step2' + x);
@@ -108,3 +110,15 @@ app.session = {
 
 	}
 };
+
+user.session= x=>{
+	$.each(x, function(k,v){
+		alert('key:'+k,'value:'+v);
+		sessionStorage.setItem(k,v);
+	});
+	alert(sessionStorage.getItem('id'));
+};
+
+user.get= x=>{
+	sessionStorage.getItem(x);
+}

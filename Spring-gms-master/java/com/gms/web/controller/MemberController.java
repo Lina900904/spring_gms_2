@@ -7,12 +7,14 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.gms.web.domain.MemberDTO;
-import com.gms.web.repository.MemberDAO;
+import com.gms.web.mapper.MemberMapper;
 import com.gms.web.service.MemberService;
 
 
@@ -40,10 +42,13 @@ public class MemberController {
 	}
 	@RequestMapping("/count")
 	public void count() {}
-	@RequestMapping(value="/modify", method = RequestMethod.POST)
-	public void modify(@ModelAttribute MemberDTO member, Model model) {
+	@RequestMapping(value="/modify/id", method = RequestMethod.POST)
+	public void modify(@ModelAttribute MemberDTO member, @PathVariable String id ) {
 		Map<String, Object> p = new HashMap<>();
+		member.setId(id);
+		System.out.println(id);
 		p.put("member",member);
+		
 		memberService.modify(p);
 		System.out.println("modify member값"+member);
 		

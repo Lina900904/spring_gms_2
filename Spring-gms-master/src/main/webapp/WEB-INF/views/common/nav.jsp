@@ -13,7 +13,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a >About</a></li>
+       <li><a class="page-scroll"> ${member.id} 페이지</a></li>
+    	
         <li id="loginBut" ><a class="page-scroll">Login</a></li>
         <li id="joinBut" ><a class="page-scroll">회원가입</a></li>
       </ul>
@@ -21,3 +22,6 @@
     <!-- /.navbar-collapse --> 
   </div>
 </div>
+<script>
+
+</script>

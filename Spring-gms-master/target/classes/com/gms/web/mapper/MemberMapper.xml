@@ -5,14 +5,13 @@
 <mapper namespace="com.gms.web.mapper.MemberMapper">
 	<select id="selectOne" resultType="com.gms.web.domain.MemberDTO">
 		SELECT
-		ID,PASSWORD,SSN,NAME,GENDER,ROLL,TEAMID,AGE FROM MEMBER WHERE ID LIKE
-		#{id}
+		ID,PASSWORD,SSN,NAME,GENDER,ROLL,TEAMID,AGE FROM MEMBER WHERE ID LIKE #{id}
+	<!-- 	#{userid} -> 'hong'
+		${userid} -> userid
+		#은 ' '와 같다 -->
 	</select>
-	<select id="login" resultType="com.gms.web.domain.MemberDTO">
-		SELECT
-		ID, PASSWORD, SSN, NAME, GENDER, ROLL, TEAMID, AGE 
-		FROM MEMBER 
-		 WHERE ID LIKE #{id} AND PASSWORD LIKE #{password}
+	<select id="login" resultType="java.lang.String">
+	SELECT COUNT(*) FROM MEMBER WHERE ID LIKE #{id} AND PASSWORD LIKE #{password};
 
 	</select>
 	<insert id="add" parameterType="com.gms.web.domain.MemberDTO">
